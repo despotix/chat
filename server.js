@@ -79,7 +79,7 @@ if (cluster.isMaster) {
             process.send(Object.assign({index, pid: process.pid, message: bye}));
         }).on('error', (e) => {
             console.log(e);
-        });;
+        });
     });
 
     process.on('message', (json) => {
@@ -88,7 +88,7 @@ if (cluster.isMaster) {
                 if (i == json.index) continue;
             console.log( 'msg from master', json);
             if(clients[i].write) clients[i].write(json.message);
-            if(clients[i].send) clients[i].send(json.message);
+            if(clients[i].send) if (clients[i].readyState === WebSocket.OPEN) clients[i].send(json.message);
         }
     });
 }
