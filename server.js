@@ -62,7 +62,7 @@ if (cluster.isMaster) {
 
     // web-socket connections
     const WebSocket = require('ws');
-    const wss = new WebSocket.Server({ port: 8080 });
+    const wss = new WebSocket.Server({ port: 8081 });
     wss.on('connection', (ws) => {
         clients.push(ws);
         let index = clients.indexOf(ws);
