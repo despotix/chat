@@ -38,8 +38,9 @@
 
         socket.onmessage = function(event) {
             console.log("Получены данные " + event.data);
+            let ts = Date.now();
             let o = JSON.parse(event.data);
-            document.getElementById("output").value += "\n["+(new Date()).toISOString().slice(11, -1)+"] < " + o.name +': ' + o.msg;
+            document.getElementById("output").value += "\n["+(new Date(ts)).toISOString().slice(11, -1)+"] < " + o.name +': ' + o.msg;
         };
 
         socket.onerror = function(error) {
