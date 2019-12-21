@@ -21,7 +21,7 @@
         }
     </style>
     <script>
-        var socket = new WebSocket("ws://46.219.125.69:5000/ws");
+        var socket = new WebSocket("ws://despotix.best/ws");
         socket.onopen = function() {
             console.log("Соединение установлено.");
             socket.send(JSON.stringify({name:gname,msg:'User '+gname+' joined'}));
