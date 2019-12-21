@@ -21,7 +21,7 @@
         }
     </style>
     <script>
-        var socket = new WebSocket("ws://chat.despotix.best:3001/ws");
+        var socket = new WebSocket("ws://chat.despotix.best:8081/ws");
         socket.onopen = function() {
             console.log("Соединение установлено.");
             socket.send(JSON.stringify({name:gname,msg:'User '+gname+' joined'}));
