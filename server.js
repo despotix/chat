@@ -32,7 +32,7 @@ if (cluster.isMaster) {
     .get('/', (req, res) => {
         res.sendFile(__dirname + '/index.html');
     })
-    .listen(3000);
+    .listen(7000);
 
     let clients = [];
 
